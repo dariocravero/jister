@@ -12,9 +12,11 @@ Easily gist an entire project.
 
 ## Commands
 
-On the project's directory, run:
+This is dead simple. On your project's directory, run:
 
     jister push
+    
+or:
 
     jister pull GIST-ID
 
