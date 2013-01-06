@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+require 'rubygems' # ruby1.9 doesn't 'require' it though
+require 'thor'
+require 'rake'
+load File.expand_path('../../lib/jister.rake', __FILE__)
+
+class Jister < Thor
+  VERSION = '0.1'
+  include Thor::RakeCompat
+
+  desc 'push', "Push the current project to a Gist" 
+  def push
+    Rake::Task['jister:push'].execute
+  end
+
+  desc 'pull', "Pull a Gist with a project" 
+  def pull(id)
+    Rake::Task['jister:pull'].invoke(id)
+  end
+end
+
+Jister.start
