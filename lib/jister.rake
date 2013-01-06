@@ -4,6 +4,7 @@ namespace :jister do
     require 'jist'
     ROOT = ENV['JISTER_ROOT'] || Dir.pwd 
     FILES = ENV['JISTER_FILES'] ? ENV['JISTER_FILES'].split(',') : ['**/*.rb', '**/*.haml', '**/*.rake', '**/*.js', '**/*.css']
+    PUBLIC = ENV['JISTER_PUBLIC'] ? (ENV['JISTER_FILES'] == 'true' ? true : false) : false
 
     puts "Be patient... We're preparing your gist."
 
@@ -20,7 +21,7 @@ namespace :jister do
     new_jist = !File.exists?(jisted)
 
     # Set the gist to public and update it if it already existed
-    options = {:public => true}
+    options = {:public => PUBLIC}
     options[:update] = File.read(jisted) unless new_jist
 
     # Gist it!

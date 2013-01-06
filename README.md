@@ -38,6 +38,12 @@ The files that will be saved to the gist. Defaults to ```['**/*.rb', '**/*.haml'
 
     export JISTER_FILES='Gemfile,**/*.rb,thisfile.js'
 
+### JISTER_PUBLIC
+
+Set JISTER_PUBLIC to true if you want to allow public jistering. Defaults to false.
+
+    export JISTER_PUBLIC=true
+
 ## Using it as a rake task
 
 Copy lib/jister.rake into your app. Make sure you have "jist" installed first.
