@@ -1,9 +1,10 @@
-require File.expand_path("../lib/your_gem/version", __FILE__)
+require File.expand_path("../lib/version", __FILE__)
 
 Gem::Specification.new do |gem|
   gem.name    = 'jister'
   gem.version = Jister::VERSION
   gem.date    = Date.today.to_s
+  gem.executables << 'jister'
 
   gem.summary = "Gist an entire project back and forth"
   gem.description = "Use jister to push and pull an entire project from Github's gists! It's great for sharing a project while debugging an issue..."

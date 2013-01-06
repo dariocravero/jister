@@ -1,6 +1,6 @@
 # jister
 
-Easily gist a whole project.
+Easily gist an entire project.
 
 ## Installing
 

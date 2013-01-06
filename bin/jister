@@ -5,7 +5,6 @@ require 'rake'
 load File.expand_path('../../lib/jister.rake', __FILE__)
 
 class Jister < Thor
-  VERSION = '0.1'
   include Thor::RakeCompat
 
   desc 'push', "Push the current project to a Gist" 
