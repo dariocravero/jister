@@ -7,14 +7,28 @@ load File.expand_path('../../lib/jister.rake', __FILE__)
 class Jister < Thor
   include Thor::RakeCompat
 
+  RECIPES = {
+    :padrino => ".components,Gemfile,Rakefile,app/**/*.*,config/*.rb,config.ru,lib/**/*.*,public/**/*.js,public/**/*.css"
+  }
+
   desc 'push', "Push the current project to a Gist" 
+  method_options :recipe => :string
   def push
+    recipe = options[:recipe]
+    ENV['JISTER_FILES'] = RECIPES[recipe.to_sym] if (recipe && RECIPES[recipe.to_sym])
+
     Rake::Task['jister:push'].execute
   end
 
   desc 'pull', "Pull a Gist with a project" 
   def pull(id)
     Rake::Task['jister:pull'].invoke(id)
+  end
+
+  desc 'recipes', 'Show the list of available recipes'
+  def recipes
+    puts 'List of available recipes:'
+    puts "  #{RECIPES.keys.join("\n")}"
   end
 end
 

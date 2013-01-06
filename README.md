@@ -20,6 +20,10 @@ or:
 
     jister pull GIST-ID
 
+To list the available recipes do:
+
+    jister recipes
+
 ## Configuration
 
 ### JISTER_ROOT
@@ -36,12 +40,10 @@ The files that will be saved to the gist. Defaults to ```['**/*.rb', '**/*.haml'
 
 ## Using it as a rake task
 
-    Copy lib/jister.rake into your app. Make sure you have "jist" installed first.
+Copy lib/jister.rake into your app. Make sure you have "jist" installed first.
 
-## Creating a new Padrino project from a gist
+## Using recipes to rapidly push an entire project 
 
-    padrino g project some_project; cd some_project; jister pull GIST-ID
+  To an entire Padrino project:
 
-or
-
-    padrino g project some_project; cd some_project; curl -L http://jister.uxtemple.com | `which bash` -s GIST-ID
+    jister push --recipe padrino
