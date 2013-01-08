@@ -2,13 +2,29 @@
 
 Easily gist an entire project.
 
+## Why would you want to use this?
+
+Well, let's say somebody submits an issue to that super project you're contributing to.
+You do want to fix it but when you read it says: "X doesn't work on my machine".
+
+_Does that sound familiar?_ If it does, welcome **jister**.
+With it you can easily upload an entire project to a gist in no time. Sure, you could throw a
+tarball somewhere but you will miss the gist's sweetness: forking and comments on your code. Beat that :P
+
 ## Installing
 
     gem install jister
 
 ### Pulling a jister without installation 
 
-    curl -L http://jister.uxtemple.com | `which bash` -s GIST-ID 
+    curl -L http://jister.uxtemple.com | `which bash` -s GIST-ID
+    
+### Creating a jist without any gem
+
+A jist is no more than a bunch of files on a gist and way to name them.
+If Github provided directories on gists it would be even easier but it doesn't.
+So I've just replaced ```/``` on paths for ```_-_```. Try that and the fetch your script with
+the pulling instructions above.
 
 ## Commands
 
